@@ -2,6 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Feeds from '../screens/Feeds';
 import Video from '../screens/Video';
+import { Header } from 'react-native/Libraries/NewAppScreen';
 
 const Navigation = () => {
   const Stack = createNativeStackNavigator();
@@ -10,7 +11,13 @@ const Navigation = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name='Feeds' component={Feeds} />
-        <Stack.Screen name='Video' component={Video} />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name='Video'
+          component={Video}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
